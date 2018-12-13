@@ -1,0 +1,117 @@
+<div class="main-container" *ngIf="data">
+  <form #forma="ngForm">
+    <hr>
+    <div class="row">
+      <h4 class="title">Habilidades</h4>
+    </div>
+    <div class="row">
+      <li class="title"> <h5>Habilidades técnicas</h5></li>
+    </div>
+    <div class="row form-group">
+      <label class="customcheck">Diseño gráfico
+         <input type="checkbox"
+                [(ngModel)]="data[0].activa"
+                checked="checked"
+                name="1"
+                >
+        <span class="checkmark"></span>
+        </label>
+    </div>
+    <div class="row form-group">
+      <label class="customcheck">Diseño gráfico
+         <input type="checkbox"
+                checked="checked"
+                [(ngModel)]="data[1].activa"
+                name="2"
+                >
+         <span class="checkmark"></span>
+       </label>
+    </div>
+    <div class="row form-group">
+      <label class="customcheck">Impartir conferencias
+         <input type="checkbox"
+                checked="checked"
+                [(ngModel)]="data[2].activa"
+                name="3"
+                >
+         <span class="checkmark"></span>
+       </label>
+    </div>
+    <div class="row form-group">
+      <label>Otros</label>
+      <input  type="text"
+              class="form-control"
+              placeholder="otros"
+              [(ngModel)]="data[3].comentario"
+              name="4">
+    </div>
+    <hr>
+    <div class="row">
+      <li class="title"> <h5>Eventos(Dentro y fuera de nuestra sede)</h5></li>
+    </div>
+
+    <div class="row form-group">
+      <label class="customcheck">Decoración
+         <input type="checkbox"
+                checked="checked"
+                [(ngModel)]="data[4].activa"
+                name="5"
+                >
+         <span class="checkmark"></span>
+       </label>
+    </div>
+    <div class="row form-group">
+      <label class="customcheck">Refrigerio
+         <input type="checkbox"
+                checked="checked"
+                [(ngModel)]="data[5].activa"
+                name="6"
+                >
+         <span class="checkmark"></span>
+       </label>
+     </div>
+     <div class="row form-group">
+       <label>Otros</label>
+       <input  type="text"
+               class="form-control"
+               placeholder="otros"
+               [(ngModel)]="data[6].comentario"
+               name="7">
+     </div>
+     <div class="row">
+       <li class="title"> <h5>Comunicación</h5></li>
+     </div>
+     <div class="row form-group">
+       <label class="customcheck">Llamadas telefónicas o mensajes por Whatsapp
+          <input type="checkbox"
+                 checked="checked"
+                 [(ngModel)]="data[7].activa"
+                 name="8"
+                 >
+          <span class="checkmark"></span>
+        </label>
+     </div>
+     <div class="row form-group">
+       <label class="customcheck">Redes sociales
+          <input type="checkbox"
+                 checked="checked"
+                 [(ngModel)]="data[8].activa"
+                 name="9"
+                 >
+          <span class="checkmark"></span>
+        </label>
+      </div>
+     <div class="row form-group">
+       <label>Otros</label>
+       <input  type="text"
+               class="form-control"
+               placeholder="otros"
+               [(ngModel)]="data[9].comentario"
+               name="10">
+     </div>
+   </form>
+   <button type="submit" (click)="update()" class="btn btn-success btn-lg">Guardar Cambios</button>
+   <div class="alert alert-light" role="alert" *ngIf="actualizado">
+     Actualizado!
+   </div>
+</div>

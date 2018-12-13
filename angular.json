@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "project-telefono": {
+    "esperanza-project": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/project-telefono",
+            "outputPath": "dist/esperanza-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,10 +24,14 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+               "./node_modules/font-awesome/css/font-awesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.slim.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -45,32 +49,25 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "project-telefono:build"
+            "browserTarget": "esperanza-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "project-telefono:build:production"
+              "browserTarget": "esperanza-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project-telefono:build"
+            "browserTarget": "esperanza-project:build"
           }
         },
         "test": {
@@ -104,20 +101,19 @@
         }
       }
     },
-    "project-telefono-e2e": {
+    "esperanza-project-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "project-telefono:serve"
+            "devServerTarget": "esperanza-project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "project-telefono:serve:production"
+              "devServerTarget": "esperanza-project:serve:production"
             }
           }
         },
@@ -133,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "project-telefono"
+  "defaultProject": "esperanza-project"
 }

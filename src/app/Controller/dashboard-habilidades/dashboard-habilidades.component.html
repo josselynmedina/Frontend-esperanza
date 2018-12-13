@@ -1,0 +1,16 @@
+<div class="container">
+  <hr>
+  <div class="row">
+    <h4 class="title">Contactos de emergencia</h4>
+  </div>
+  <div class="row">
+    <div class="input-group">
+      <select #Habilidades (change)="getHabilidades(Habilidades.value)" class="custom-select">
+        <option selected *ngFor="let item of habilidades_items" value="{{item.id}}">{{item.nombre}}{{item.id}}</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-success" (click)="getHabilidades(Habilidades.value)" type="button" >Buscar</button>
+      </div>
+    </div>
+  </div>
+</div>

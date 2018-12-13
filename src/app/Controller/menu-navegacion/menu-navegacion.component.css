@@ -1,0 +1,29 @@
+.logoBarra{
+  height: 120px;
+  width: 100%;
+}
+.backColor{
+  background-color: #a6c955;
+  height: 100vh;
+}
+
+.stilo-item{
+  padding-left: 10px;
+  margin-left: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 35px;
+  color: white;
+}
+
+.row-text{
+  font-size: 25px;
+  color: white;
+  padding-left: 5px;
+  margin-left: 5px;
+}
+
+.row{
+  border-top: 1pt solid #9e9114;
+  margin-right: 0px !important;
+}

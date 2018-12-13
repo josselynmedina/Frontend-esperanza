@@ -1,0 +1,43 @@
+<div class="main-container">
+  <div class="row" [hidden]="id!='1'">
+    <h4 class="title">Disponibilidad</h4>
+  </div>
+  <form #forma="ngForm" novalidate="">
+    <div class="row alert alert-primary dias" role="alert">
+      <div class="col-4 dia-text">
+        <h3>{{dia_semana}}</h3>
+      </div>
+      <div class="col-4">
+        <div class="row dia-text">
+          <span class="col-12 badge badge-pill badge-light">Disponibilidad</span>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+             <input type="time"
+                    class="form-control"
+                    ngModel
+                    name="desde" />
+           </div>
+          <div class="form-group col-6">
+             <input type="time"
+                    class="form-control"
+                    ngModel
+                    name="hasta" />
+           </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Nota</span>
+          </div>
+          <textarea class="form-control"
+                    aria-label="With textarea"
+                    ngModel
+                    name="nota"
+                    placeholder="Nota de texto"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

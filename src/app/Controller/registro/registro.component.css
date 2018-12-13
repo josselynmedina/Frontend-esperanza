@@ -1,0 +1,21 @@
+.ng-invalid.ng-touched:not(form){
+  border: 1px solid red;
+}
+
+.dias{
+  background-color: #25a638 !important;
+  width: 100% !important;
+}
+
+.dia-text{
+  color: white;
+}
+
+.header-volunter{
+  background-color: #a6c955 !important;
+  height: 65px;
+  font-size: 45px;
+  color: white;
+  text-align: center !important;
+  border-bottom: 30px;
+}

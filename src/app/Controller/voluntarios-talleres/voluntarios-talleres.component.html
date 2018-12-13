@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <a class="title">Talleres</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-group">
+      <select #voluntarioTaller class="custom-select">
+        <option selected *ngFor="let item of talleres_voluntarios" value="{{item.id_taller}}">{{item.nombre}}</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-success" (click)="agregarTaller(voluntarioTaller.value)" type="button" >Agregar</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <table class="table table-hover table-nonfluid">
+      <thead>
+        <tr>
+          <th class="col-4">Nombre</th>
+          <th class="col-2">Sesiones Recibidas</th>
+          <th class="col-2">Rango desde</th>
+          <th class="col-2">Rango hasta</th>
+          <th class="col-1">Finalizado</th>
+          <th class="col-1">Actualizar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>{{item.nombre}}</td>
+          <td>
+            <input  type="text"
+                    class="form-control"
+                    placeholder="0"
+                    [(ngModel)]="item.sesiones_recibidas"
+                    name="celular"
+                    pattern="\d*"
+                    required
+                    >
+          </td>
+          <td>{{item.anios_desde}}</td>
+          <td>{{item.anios_hasta}}</td>
+          <td>
+            <div class="form-group">
+              <label class="customcheck">
+                 <input type="checkbox"
+                        checked="checked"
+                        [(ngModel)]="item.finalizado"
+                        name="estado"
+                        >
+                 <span class="checkmark"></span>
+               </label>
+             </div>
+          </td>
+          <td><button type="button"
+                      class="btn btn-success"
+                      (click)="actualizarTaller(item)">Actualizar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

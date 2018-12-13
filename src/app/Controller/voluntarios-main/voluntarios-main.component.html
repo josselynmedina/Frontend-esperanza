@@ -1,0 +1,54 @@
+<div class="main-container">
+  <div class="row">
+    <div class="col-12 header-volunter">
+      Identificacion de voluntarios
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="input-group">
+        <select #voluntariosList (change)="recuperarVoluntario(voluntariosList.value)" class="custom-select">
+          <option selected *ngFor="let item of voluntarios" value="{{item.id}}">{{item.nombre}}{{item.id}}</option>
+        </select>
+        <div class="input-group-append">
+          <button class="btn btn-success" (click)="recuperarVoluntario(voluntariosList.value)" type="button" >Buscar</button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <button class="btn btn-success" (click)="export()" type="button" >Exportar</button>
+
+    </div>
+    <div class="row">
+      <div class="col-12 header-info">
+        Identificacion de voluntarios
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 btn-group btn-group-toggle bar-nav" data-toggle="buttons">
+        <label class="btn btn-secondary width-btn" [routerLink]="['Informacion']">
+          <input type="radio" name="options"> informacion
+        </label>
+        <label class="btn btn-secondary width-btn" [routerLink]="['Contactos']">
+          <input type="radio" name="options"> Contacto
+        </label>
+        <label class="btn btn-secondary width-btn" [routerLink]="['Disponibilidad']">
+          <input type="radio" name="options"> Disponibilidad
+        </label>
+        <label class="btn btn-secondary width-btn" [routerLink]="['Habilidades']">
+          <input type="radio" name="options"> Habilidades
+        </label>
+        <label class="btn btn-secondary width-btn" [routerLink]="['Talleres']">
+          <input type="radio" name="options"> Talleres
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <router-outlet #routerchild (activate)='onActivate($event)'></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

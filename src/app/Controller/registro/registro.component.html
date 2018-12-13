@@ -1,0 +1,31 @@
+<div class="main-container">
+  <div class="row">
+    <div class="col-12 header-volunter">
+      Registro de voluntarios
+    </div>
+  </div>
+    <div class="alert alert-danger" role="alert" [hidden]="validadoClick">
+      Campos pendientes
+    </div>
+
+    <app-registro-info #info></app-registro-info>
+    <app-registro-contacto #contacto></app-registro-contacto>
+    <app-registro-disponibilidad [dia_semana]="'Lunes'" [id]=1 #disponibilidadLun></app-registro-disponibilidad>
+    <app-registro-disponibilidad [dia_semana]="'Martes'" [id]=2 #disponibilidadMar></app-registro-disponibilidad>
+    <app-registro-disponibilidad [dia_semana]="'Miercoles'"[id]=3 #disponibilidadMie></app-registro-disponibilidad>
+    <app-registro-disponibilidad [dia_semana]="'Jueves'" [id]=4 #disponibilidadJue></app-registro-disponibilidad>
+    <app-registro-disponibilidad [dia_semana]="'Viernes'" [id]=5 #disponibilidadVie></app-registro-disponibilidad>
+    <app-registro-disponibilidad [dia_semana]="'Sabado'" [id]=6 #disponibilidadSab></app-registro-disponibilidad>
+    <app-registro-disponibilidad [dia_semana]="'Domingo'" [id]=7 #disponibilidadDom></app-registro-disponibilidad>
+    <app-registro-habilidades #habilidades></app-registro-habilidades>
+
+    <button type="submit" (click)="guardar()" class="btn btn-primary">Guardar</button>
+
+    <div class="alert alert-danger" role="alert" [hidden]="validadoClick">
+      Campos pendientes
+    </div>
+
+    <div class="alert alert-success" role="alert" [hidden]="!creado" >
+      Nuevo voluntario creado
+    </div>
+</div>

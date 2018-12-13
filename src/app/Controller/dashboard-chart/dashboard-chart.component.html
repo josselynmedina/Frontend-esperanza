@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="col-6">
+    <div class="row">
+      <h3>Talleres Creados y Finalizados por Mes</h3>
+    </div>
+    <div class="row" class="size-chart" *ngIf="data_iniciados.length > 0">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"></canvas>
+        </div>
+    </div>
+  </div>
+  <hr>
+  <div class="col-6">
+    <div class="row">
+      <h3>Voluntarios activos en talleres</h3>
+    </div>
+    <div class="row" class="size-chart" *ngIf="data_iniciados.length > 0">
+      <div style="display: block">
+        <canvas baseChart
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    [chartType]="doughnutChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="">
+  <hr>
+  <div class="row">
+    <h4 class="title">Voluntarios en talleres</h4>
+  </div>
+  <div class="row">
+    <h4>Seleccione el taller a evaluar</h4>
+    <div class="input-group">
+      <select #Talleres (change)="getTalleres(Talleres.value)" class="custom-select">
+        <option selected *ngFor="let item of talleres" value="{{item.id_taller}}">{{item.nombre}}</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-success" (click)="getTalleres(Talleres.value)" type="button" >Buscar</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-hover table-nonfluid">
+      <thead>
+        <tr>
+          <th class="col-4">Nombre</th>
+          <th class="col-2">Celular</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tallereList">
+          <td>{{item.nombre}}</td>
+          <td>{{item.celular}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

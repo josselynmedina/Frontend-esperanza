@@ -1,0 +1,48 @@
+<div class="main-container">
+  <form #forma="ngForm" *ngIf="data">
+    <div class="row">
+      <a class="title">Contactos de emergencia</a>
+    </div>
+    <div class="row form-group">
+      <label>Nombre</label>
+      <input  type="text"
+              class="form-control"
+              placeholder="Nombre"
+              [(ngModel)]="data.nombre"
+              name="nombre"
+              required>
+    </div>
+    <div class="row">
+      Parentesco:
+    </div>
+    <div class="row form-group">
+      <select class="custom-select form-control"
+              required
+              name="id_parentesco"
+              [(ngModel)]="data.id_parentesco"
+              required>
+        <option value="1">Madre</option>
+        <option value="2">Padre</option>
+        <option value="3">Hermano</option>
+        <option value="4">Tio</option>
+        <option value="5">Amigo</option>
+      </select>
+    </div>
+
+    <div class="row form-group">
+      <label>Telefono</label>
+      <input  type="text"
+              class="form-control"
+              [(ngModel)]="data.telefono"
+              placeholder="99999999"
+              name="telefono"
+              pattern="\d*"
+              required
+              >
+    </div>
+  </form>
+</div>
+<button (click)="update()" type="submit" class="btn btn-success btn-lg">Guardar Cambios</button>
+<div class="alert alert-success" role="alert" *ngIf="actualizado">
+  Contacto actualizado!!
+</div>

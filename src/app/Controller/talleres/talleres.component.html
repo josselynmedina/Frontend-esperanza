@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 header-volunter">
+            Talleres
+        </div>
+    </div>
+    <div class="row">
+        <form #forma="ngForm">
+            <hr>
+            <div class="row form-group">
+                <label>Nombre del taller</label>
+                <input type="text" class="form-control" placeholder="Nombre del evento" name="nombre" [(ngModel)]="data.nombre" minlength=5 required>
+            </div>
+
+            <div class="row form-group">
+                <label>Sesiones</label>
+                <input type="text" class="form-control" placeholder="Sesiones" name="nombre" [(ngModel)]="data.sesiones" minlength=5 required>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Desde</label>
+                    <input type="date" class="form-control" placeholder="Desde" [(ngModel)]="data.anios_desde" name="nota">
+                </div>
+                <div class="form-group">
+                    <label>Hasta</label>
+                    <input type="date" class="form-control" placeholder="Hasta" [(ngModel)]="data.anios_hasta" name="nota">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label>Nombre del encargado</label>
+                <input type="text" class="form-control" placeholder="Nombre del evento" name="nombre" [(ngModel)]="data.encargado" minlength=5 required>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <button type="submit" (click)="insertnew()" class="btn btn-success">Guardar</button>
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="creado">
+        Evento creado!!
+    </div>
+
+    <hr>
+    <div class="row">
+        <table class="table table-hover table-nonfluid">
+            <thead>
+                <tr>
+                    <th class="col-4">Nombre</th>
+                    <th class="col-2">Desde</th>
+                    <th class="col-2">Hasta</th>
+                    <th class="col-2">Sesiones</th>
+                    <th class="col-1">Encargado</th>
+                    <th class="col-1">Finalizado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of tallereList">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.anios_desde}}</td>
+                    <td>{{item.anios_hasta}}</td>
+                    <td>{{item.sesiones}}</td>
+                    <td>{{item.encargado}}</td>
+                    <td>
+                        <div class="row form-group">
+                            <label class="customcheck">
+                 <input type="checkbox"
+                        checked="checked"
+                        [(ngModel)]="item.finalizado"
+                        name="estado"
+                        (change)="finalizarTaller(item)"
+                        >
+                 <span class="checkmark"></span>
+               </label>
+                        </div>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

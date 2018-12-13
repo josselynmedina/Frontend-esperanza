@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "http://escotosoft.com:3000",
+    "secure": false
+  }
+}

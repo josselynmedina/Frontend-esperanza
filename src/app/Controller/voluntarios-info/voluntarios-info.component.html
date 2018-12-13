@@ -1,0 +1,131 @@
+<div class="container">
+  <div class="row">
+    <a class="col-12 title">Informacion General</a>
+  </div>
+</div>
+
+<form #forma="ngForm" *ngIf="data">
+  <hr>
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-5">
+      <div class="row form-group">
+        <label>Su nombre completo</label>
+        <input  type="text"
+                class="form-control"
+                placeholder="Nombre y Apellidos"
+                name="nombre"
+                [(ngModel)]="data.nombre"
+                minlength=5
+                required>
+      </div>
+      <div class="row">
+        Sexo
+      </div>
+      <div class="row">
+        <div class="form-check col-12">
+          <input  class="form-check-input"
+                  type="radio"
+                  name="sexo"
+                  value="F"
+                  [(ngModel)]="data.sexo"
+                  checked
+                  required>
+          <label class="form-check-label">
+            Femenino
+          </label>
+        </div>
+        <div class="form-check col-12">
+          <input  class="form-check-input"
+                  type="radio"
+                  name="sexo"
+                  value="M"
+                  [(ngModel)]="data.sexo"
+                  required>
+          <label class="form-check-label">
+            Masculino
+          </label>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label>Su correo electronico</label>
+        <input  type="email"
+                class="form-control"
+                placeholder="Correo@domain.com"
+                [(ngModel)]="data.correo"
+                name="correo"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                >
+      </div>
+      <div class="row form-group">
+        <label>Su direccion de domicilio</label>
+        <input  type="text"
+                class="form-control"
+                placeholder="Direccion"
+                [(ngModel)]="data.direccion"
+                name="direccion"
+                >
+      </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-5">
+      <div class="row form-group">
+        <label>Numero de Celular</label>
+        <input  type="text"
+                class="form-control"
+                placeholder="99999999"
+                [(ngModel)]="data.celular"
+                name="celular"
+                pattern="\d*"
+                required
+                >
+      </div>
+      <div class="row form-group">
+        <label>Su numero de Telefono</label>
+        <input  type="text"
+                class="form-control"
+                placeholder="999999999"
+                [(ngModel)]="data.telefono"
+                name="telefono"
+                pattern="\d*"
+                required
+                >
+      </div>
+      <div class="row form-group">
+        <label>Su fecha de nacimiento</label>
+        <input  type="date"
+                class="form-control"
+                [(ngModel)]="data.fecha_nacimiento"
+                name="fecha_nacimiento"
+                >
+      </div>
+      <div class="row form-group">
+        <label>Profesion u oficio</label>
+        <input  type="text"
+                class="form-control"
+                placeholder="Profesion u oficion"
+                [(ngModel)]="data.profesion"
+                name="profesion"
+                >
+      </div>
+      <div class="row">
+        Estado civil
+      </div>
+      <div class="row form-group">
+        <select class="custom-select form-control"
+                required
+                [(ngModel)]="data.id_estado_civil"
+                name="id_estado_civil">
+          <option value="1">Soltero/a</option>
+          <option value="2">Casado/a</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</form>
+<button (click)="update()" type="submit" class="btn btn-success btn-lg">Guardar Cambios</button>
+
+<div class="alert alert-success" role="alert" *ngIf="actualizado">
+  Voluntario actualizado con exito
+</div>
